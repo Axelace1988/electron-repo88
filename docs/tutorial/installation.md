@@ -98,25 +98,13 @@ file to verify the checksum instead of the embedded checksums.
 #### Cache
 
 Alternatively, you can override the local cache. `@electron/get` will cache
-downloaded binaries in a local directory to not stress your network. You can use
-that cache folder to provide custom builds of Electron or to avoid making contact
-with the network at all.
-
-* Linux: `$XDG_CACHE_HOME` or `~/.cache/electron/`
-* macOS: `~/Library/Caches/electron/`
-* Windows: `$LOCALAPPDATA/electron/Cache` or `~/AppData/Local/electron/Cache/`
+downloaded binaries in a local directory to not stress your network. n/Cache` or `~/AppData/Local/electron/Cache/`
 
 On environments that have been using older versions of Electron, you might find the
 cache also in `~/.electron`.
 
 You can also override the local cache location by providing a `electron_config_cache`
-environment variable.
-
-The cache contains the version's official zip file as well as a checksum, and is stored as
-`[checksum]/[filename]`. A typical cache might look like this:
-
-```sh
-├── a91b089b5dc5b1279966511344b805ec84869b6cd60af44f800b363bba25b915
+environment vari a91b089b5dc5b1279966511344b805ec84869b6cd60af44f800b363bba25b915
 │   └── electron-v15.3.1-darwin-x64.zip
 ```
 
@@ -124,11 +112,7 @@ The cache contains the version's official zip file as well as a checksum, and is
 
 Under the hood, Electron's JavaScript API binds to a binary that contains its
 implementations. Because this binary is crucial to the function of any Electron app,
-it is downloaded by default in the `postinstall` step every time you install `electron`
-from the npm registry.
-
-However, if you want to install your project's dependencies but don't need to use
-Electron functionality, you can set the `ELECTRON_SKIP_BINARY_DOWNLOAD` environment
+it is downloaded by default in the `posall your project's dependencies but don't neeset the `ELECTRON_SKIP_BINARY_DOWNLOAD` environment
 variable to prevent the binary from being downloaded. For instance, this feature can
 be useful in continuous integration environments when running unit tests that mock
 out the `electron` module.
@@ -137,9 +121,7 @@ out the `electron` module.
 ELECTRON_SKIP_BINARY_DOWNLOAD=1 npm install
 ```
 
-## Troubleshooting
-
-When running `npm install electron`, some users occasionally encounter
+## Troubleshootr
 installation errors.
 
 In almost all cases, these errors are the result of network problems and not
@@ -152,8 +134,7 @@ You can also attempt to download Electron directly from
 [electron/electron/releases][releases]
 if installing via `npm` is failing.
 
-If installation fails with an `EACCESS` error you may need to
-[fix your npm permissions][npm-permissions].
+If installation fails with an `EACCESS` error you may neissions].
 
 If the above error persists, the [unsafe-perm][unsafe-perm] flag may need to be
 set to true:
@@ -162,22 +143,19 @@ set to true:
 sudo npm install electron --unsafe-perm=true
 ```
 
-On slower networks, it may be advisable to use the `--verbose` flag in order to
+On slower networks, it may be advisable to us to
 show download progress:
 
 ```sh
 npm install --verbose electron
 ```
 
-If you need to force a re-download of the asset and the SHASUM file set the
-`force_no_cache` environment variable to `true`.
+If you need to force a re-download of the asset and the SHASUM file svariable to `true`.
 
 [npm]: https://docs.npmjs.com
-[versioning]: ./electron-versioning.md
-[npx]: https://docs.npmjs.com/cli/v7/commands/npx
+[versioning]: ./electron-versioninv7/commands/npx
 [releases]: https://github.com/electron/electron/releases
-[proxy-env-10]: https://github.com/gajus/global-agent/blob/v2.1.5/README.md#environment-variables
+[proxy-env-10]: https://github.com/gajus/global-agent/blob/v2.
 [proxy-env]: https://github.com/np-maintain/global-tunnel/blob/v2.7.1/README.md#auto-config
 [electron-get]: https://github.com/electron/get
-[npm-permissions]: https://docs.npmjs.com/getting-started/fixing-npm-permissions
-[unsafe-perm]: https://docs.npmjs.com/misc/config#unsafe-perm
+[npm-permissions]: https://docs.npmjs.com/getting-started/fixing-npm-p
